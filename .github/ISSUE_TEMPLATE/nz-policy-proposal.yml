@@ -1,0 +1,73 @@
+name: New Zealand policy proposal
+description: Propose source-backed New Zealand policy research or design.
+title: "[NZ policy]: "
+labels:
+  - "type: research"
+  - "area: nz-policy"
+  - "needs-policy-source"
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Exact scenario
+      description: Do not include confidential business data.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primary official source URL
+    validations:
+      required: true
+  - type: input
+    id: effective
+    attributes:
+      label: Effective date or period
+    validations:
+      required: true
+  - type: textarea
+    id: fact
+    attributes:
+      label: Current source fact
+      description: State what the source establishes without adding interpretation.
+    validations:
+      required: true
+  - type: textarea
+    id: interpretation
+    attributes:
+      label: Proposed project interpretation
+    validations:
+      required: true
+  - type: textarea
+    id: rule
+    attributes:
+      label: Proposed rule or mapping
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Golden examples and boundaries
+    validations:
+      required: true
+  - type: dropdown
+    id: review
+    attributes:
+      label: Current review status
+      options:
+        - Unreviewed
+        - Source verified
+        - Interpretation proposed
+        - Domain reviewed
+        - Security reviewed
+        - Accepted
+        - Superseded
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Data confirmation
+      options:
+        - label: I confirm that this proposal contains no confidential business data, personal data, credentials, or secrets.
+          required: true

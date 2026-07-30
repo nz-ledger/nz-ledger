@@ -1,0 +1,22 @@
+title: "[General] "
+body:
+  - type: textarea
+    id: topic
+    attributes:
+      label: Topic
+      description: What would you like the community to discuss?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and desired outcome
+    validations:
+      required: true
+  - type: checkboxes
+    id: data
+    attributes:
+      label: Public-content confirmation
+      options:
+        - label: This contains no confidential financial information, personal data, credentials, or secrets.
+          required: true

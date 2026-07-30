@@ -1,0 +1,82 @@
+# Authoritative Source Register
+
+This maintainable research index records primary official sources and the project requirement each supports. It is not legal, tax, accounting, regulatory, privacy, or security advice. A link in this register does not by itself establish an interpretation or implemented rule.
+
+**Access check date:** 31 July 2026
+
+## Company and tax records
+
+| Authority and source | Project relevance | Source metadata | Open interpretation questions |
+| --- | --- | --- | --- |
+| New Zealand Legislation, [Companies Act 1993: company records](https://www.legislation.govt.nz/act/public/1993/105/en/latest/#DLM320862) | Company record boundary and source retention research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| New Zealand Legislation, [Companies Act 1993: accounting records must be kept](https://www.legislation.govt.nz/act/public/1993/105/en/latest/#DLM320899) | Accounting-record integrity and retention research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Inland Revenue, [Record keeping](https://www.ird.govt.nz/managing-my-tax/record-keeping) | General New Zealand tax record requirements | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Inland Revenue, [Financial reporting requirements for companies](https://www.ird.govt.nz/managing-my-tax/record-keeping/financial-reporting-for-companies/financial-reporting-requirements-for-companies) | Company financial-reporting boundary | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Inland Revenue, [Standards for minimum financial reporting](https://www.ird.govt.nz/managing-my-tax/record-keeping/financial-reporting-for-companies/standards-for-minimum-financial-reporting) | Minimum reporting research and policy-pack sources | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+
+## Tax and digital services
+
+| Authority and source | Project relevance | Source metadata | Open interpretation questions |
+| --- | --- | --- | --- |
+| Inland Revenue, [GST digital services](https://www.ird.govt.nz/digital-service-providers/services-catalogue/returns-and-information/goods-and-services-tax) | Future filing-integration boundary and contracts | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Inland Revenue, [Digital service providers](https://www.ird.govt.nz/digital-service-providers) | Provider obligations and integration programme boundary | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Inland Revenue, [Gateway services security measures](https://www.ird.govt.nz/digital-service-providers/guides-and-docs/gws-architecture/security-measures) | Future integration security design | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Inland Revenue, [Operational Security Framework](https://www.ird.govt.nz/digital-service-providers/operational-security-framework) | Future operational assurance requirements | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Inland Revenue, [eInvoicing](https://www.ird.govt.nz/managing-my-tax/record-keeping/einvoicing) | Evidence and structured-invoice research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+
+## Accounting standards and currencies
+
+| Authority and source | Project relevance | Source metadata | Open interpretation questions |
+| --- | --- | --- | --- |
+| External Reporting Board, [NZ IAS 21](https://www.xrb.govt.nz/standards/accounting-standards/for-profit-entities/nz-ias-21/) | Foreign-currency accounting research for applicable entities | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+
+## Banking and payments
+
+| Authority and source | Project relevance | Source metadata | Open interpretation questions |
+| --- | --- | --- | --- |
+| Payments NZ API Centre, [Available API standards](https://www.apicentre.paymentsnz.co.nz/standards/available-standards/) | Banking integration contracts and security boundary | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Payments NZ API Centre, [Minimum open-banking implementation plan](https://www.apicentre.paymentsnz.co.nz/standards/implementation/minimum-open-banking-implementation-plan/) | Integration sequencing and availability research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+
+## Privacy
+
+| Authority and source | Project relevance | Source metadata | Open interpretation questions |
+| --- | --- | --- | --- |
+| Office of the Privacy Commissioner, [Privacy principles](https://www.privacy.org.nz/privacy-principles/) | Privacy architecture and policy research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Office of the Privacy Commissioner, [Principle 5: storage and security](https://www.privacy.org.nz/privacy-principles/5/) | Evidence, tenant, and operational safeguards | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Office of the Privacy Commissioner, [AI and the information privacy principles](https://www.privacy.org.nz/resources-and-learning/a-z-topics/ai/) | Agent and AI evidence-processing boundary | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Office of the Privacy Commissioner, [Notify a serious privacy breach](https://www.privacy.org.nz/responsibilities/privacy-breaches/notify-us/) | Breach assessment and response research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+
+## Digital instruments and regulated boundaries
+
+| Authority and source | Project relevance | Source metadata | Open interpretation questions |
+| --- | --- | --- | --- |
+| Inland Revenue, [Cryptoassets](https://www.ird.govt.nz/cryptoassets) | New Zealand tax research boundary for digital instruments | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Inland Revenue, [Business transactions using cryptoassets](https://www.ird.govt.nz/cryptoassets/business/transactions) | Business-event and tax research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Inland Revenue, [Cryptoasset record keeping](https://www.ird.govt.nz/cryptoassets/taxing/record-keeping) | Instrument evidence and record-retention research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Department of Internal Affairs, [Virtual asset service providers](https://www.dia.govt.nz/AML-CFT-Virtual-Asset-Service-Providers) | Custody, exchange, transfer, and regulated-service boundary | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Department of Internal Affairs, [AML/CFT legislation](https://www.dia.govt.nz/AML-CFT-Legislation) | Regulated capability boundary | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| Financial Markets Authority, [Designations](https://www.fma.govt.nz/business/legislation/secondary-legislation/designations/) | Financial-market classification research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+
+## Repository and package supply chain
+
+| Authority and source | Project relevance | Source metadata | Open interpretation questions |
+| --- | --- | --- | --- |
+| GitHub Docs, [Maintaining ownership continuity](https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/maintaining-ownership-continuity-for-your-organization) | Two-owner continuity control | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| GitHub Docs, [Requiring two-factor authentication](https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization) | Organisation authentication baseline | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| GitHub Docs, [Repository rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets) | Branch and tag protection | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| GitHub Docs, [Private vulnerability reporting](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/report-privately) | Confidential vulnerability intake | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| GitHub Docs, [Secure use of Actions](https://docs.github.com/en/actions/reference/security/secure-use) | Workflow permissions, pinning, and untrusted-fork controls | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| GitHub Docs, [Workflow execution protections](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/actions-policies/workflow-execution-protections) | Fork workflow approval and execution policy | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| GitHub Docs, [Artifact attestations](https://docs.github.com/en/actions/concepts/security/artifact-attestations) | Future release provenance | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| npm Docs, [Trusted publishing](https://docs.npmjs.com/trusted-publishers/) | Future OIDC publication without a long-lived token | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+
+## Maintenance
+
+When adding or updating an entry:
+
+1. Prefer the responsible authority's primary publication.
+2. Record the exact project requirement supported.
+3. Check the target and meaningful content, not only the HTTP status.
+4. Record the access date and any effective or publication date relevant to a policy proposal.
+5. Track broken, superseded, archived, or ambiguous sources in an issue.
+6. Keep fact, project interpretation, and implementation separate.

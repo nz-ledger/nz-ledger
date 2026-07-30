@@ -1,0 +1,62 @@
+name: Extension proposal
+description: Propose a connector, module, experience, agent, report, or policy extension.
+title: "[Extension]: "
+labels:
+  - "type: design"
+  - "area: extensions"
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Extension category
+      options:
+        - Connector
+        - Business or industry module
+        - Experience application
+        - Agent or workflow extension
+        - Reporting or analytics extension
+        - Organisation-specific policy extension
+    validations:
+      required: true
+  - type: textarea
+    id: contracts
+    attributes:
+      label: Required commands, queries, events, and evidence
+    validations:
+      required: true
+  - type: textarea
+    id: permissions
+    attributes:
+      label: Requested permissions and least-privilege rationale
+    validations:
+      required: true
+  - type: textarea
+    id: residency
+    attributes:
+      label: Data classification, residency, retention, and export
+    validations:
+      required: true
+  - type: textarea
+    id: isolation
+    attributes:
+      label: Isolation and failure modes
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: Security review requirements
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and conformance
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria and expected artefacts
+    validations:
+      required: true

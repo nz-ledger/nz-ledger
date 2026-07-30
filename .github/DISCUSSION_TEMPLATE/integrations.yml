@@ -1,0 +1,28 @@
+title: "[Integration] "
+labels:
+  - "area: extensions"
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Business outcome and neutral system category
+    validations:
+      required: true
+  - type: textarea
+    id: events
+    attributes:
+      label: Evidence, commands, queries, and events
+    validations:
+      required: true
+  - type: textarea
+    id: controls
+    attributes:
+      label: Authority, reconciliation, privacy, and failure controls
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Native, Module, or Integration boundary
+    validations:
+      required: true

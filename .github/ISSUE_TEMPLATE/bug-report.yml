@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a reproducible defect. Use private reporting for security concerns.
+title: "[Bug]: "
+labels:
+  - "type: implementation"
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: textarea
+    id: financial
+    attributes:
+      label: Financial-integrity impact
+    validations:
+      required: true
+  - type: dropdown
+    id: security
+    attributes:
+      label: Could this be a security or privacy issue?
+      options:
+        - No
+        - Unsure, I will stop and use private vulnerability reporting
+        - Yes, I will stop and use private vulnerability reporting
+    validations:
+      required: true
+  - type: checkboxes
+    id: data
+    attributes:
+      label: Public-data confirmation
+      options:
+        - label: I confirm that no secrets, personal data, or private financial data are attached.
+          required: true

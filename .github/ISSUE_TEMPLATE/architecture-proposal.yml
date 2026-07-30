@@ -1,0 +1,73 @@
+name: Architecture proposal
+description: Propose a material architecture or public-contract change.
+title: "[Architecture]: "
+labels:
+  - "type: design"
+body:
+  - type: markdown
+    attributes:
+      value: Read the charter, founding decisions, architecture, security policy, and threat model first.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem needs an architecture decision?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and platform fit
+      description: Define scope, non-goals, and why this belongs in NZ Ledger.
+    validations:
+      required: true
+  - type: textarea
+    id: locked
+    attributes:
+      label: Affected locked decisions
+      description: Name affected decision IDs or state that none are affected.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Proposed boundary
+      description: Describe responsibilities, contracts, data, authority, and failure boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Include doing nothing where meaningful.
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: Security and privacy impact
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and migration impact
+    validations:
+      required: true
+  - type: dropdown
+    id: record
+    attributes:
+      label: Decision record expected
+      options:
+        - RFC required
+        - ADR required after acceptance
+        - Both RFC and ADR
+        - Neither, with rationale below
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria and expected artefacts
+    validations:
+      required: true

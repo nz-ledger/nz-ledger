@@ -1,0 +1,27 @@
+title: "[Architecture] "
+labels:
+  - "type: design"
+body:
+  - type: markdown
+    attributes:
+      value: Use this category for early architecture discussion. Accepted work requires an issue and, where applicable, an RFC or ADR.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and desired outcome
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context, constraints, and evidence
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options and trade-offs
+  - type: textarea
+    id: impacts
+    attributes:
+      label: Security, accounting, policy, and compatibility impacts

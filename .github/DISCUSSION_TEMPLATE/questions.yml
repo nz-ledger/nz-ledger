@@ -1,0 +1,19 @@
+title: "[Question] "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+    validations:
+      required: true
+  - type: textarea
+    id: checked
+    attributes:
+      label: What have you already checked?
+  - type: checkboxes
+    id: data
+    attributes:
+      label: Public-content confirmation
+      options:
+        - label: This contains no confidential financial information, personal data, credentials, or secrets.
+          required: true

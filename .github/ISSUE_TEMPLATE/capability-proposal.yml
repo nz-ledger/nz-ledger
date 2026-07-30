@@ -1,0 +1,60 @@
+name: Capability proposal
+description: Propose a business capability using neutral language.
+title: "[Capability]: "
+labels:
+  - "type: design"
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Business outcome
+    validations:
+      required: true
+  - type: textarea
+    id: category
+    attributes:
+      label: Organisation or industry category
+      description: Use neutral categories and no named accounting product or vendor comparisons.
+    validations:
+      required: true
+  - type: dropdown
+    id: path
+    attributes:
+      label: Recommended support path
+      options:
+        - Native
+        - Module
+        - Integration
+        - Research required
+    validations:
+      required: true
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Financial consequences and controls
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and reconciliation requirements
+    validations:
+      required: true
+  - type: textarea
+    id: policy
+    attributes:
+      label: New Zealand policy impact and primary sources
+    validations:
+      required: true
+  - type: textarea
+    id: extensibility
+    attributes:
+      label: Extensibility and integration impact
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true

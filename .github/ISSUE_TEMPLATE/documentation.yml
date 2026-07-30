@@ -1,0 +1,35 @@
+name: Documentation
+description: Propose a bounded documentation correction.
+title: "[Docs]: "
+labels:
+  - "type: documentation"
+body:
+  - type: input
+    id: document
+    attributes:
+      label: Document and section
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Supporting primary source, where applicable
+  - type: checkboxes
+    id: neutrality
+    attributes:
+      label: Content confirmation
+      options:
+        - label: The proposal uses neutral language and contains no private data or secrets.
+          required: true

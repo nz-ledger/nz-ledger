@@ -1,0 +1,30 @@
+title: "[NZ policy] "
+labels:
+  - "area: nz-policy"
+  - "needs-policy-source"
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Scenario
+      description: Do not include real or confidential records.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Current primary official source
+    validations:
+      required: true
+  - type: textarea
+    id: separation
+    attributes:
+      label: Source fact, possible interpretation, and open questions
+    validations:
+      required: true
+  - type: input
+    id: effective
+    attributes:
+      label: Relevant effective date or period
+    validations:
+      required: true
