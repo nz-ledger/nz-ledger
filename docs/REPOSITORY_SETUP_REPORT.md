@@ -18,7 +18,7 @@ This report records verified bootstrap state for the public NZ Ledger repositori
 | Main repository | Complete | The public `nz-ledger` repository exists on `main` with the required documentation-only tree. |
 | Community configuration | Complete | Issues, forms, templates, labels, milestones, backlog, and the six Discussion categories are verified. |
 | Repository security baseline | Complete | Rulesets, security features, least-privilege Actions, CodeQL default setup, Dependabot, and Scorecard are enabled and verified as described below. |
-| Post-bootstrap security review | Partial | Configuration and workflow checks are complete; the final Codex Security repository scan is intentionally scheduled after all other bootstrap work. |
+| Post-bootstrap security review | Complete | Codex Security scan `4b21544f-332f-4892-951e-91e8307e6319` reviewed all 43 files at commit `fa825bef4782bf2a0d1be9ff65c3b89e59bdc613`. Coverage is complete; the only finding is the already-disclosed, low-severity backup-owner continuity gap. |
 
 ## Locations
 
@@ -46,12 +46,16 @@ This report records verified bootstrap state for the public NZ Ledger repositori
 | Installed GitHub Apps | None | 31 July 2026 |
 | Organisation repositories | Exactly two public repositories: `.github` and `nz-ledger` | 31 July 2026 |
 | Organisation profile picture | NZ Ledger icon supplied by Mark and confirmed on the public organisation profile | 31 July 2026 |
+| Public profile fields | Display name `NZ Ledger`, neutral project description, location `New Zealand`, and the main repository website are published; public email, company, and social fields remain blank because no approved project values exist | 31 July 2026 |
+| Organisation Projects | Disabled because no organisation or repository Project is required at bootstrap | 31 July 2026 |
+| Web commit sign-off | Required organisation-wide | 31 July 2026 |
+| New-repository security defaults | Dependency graph, Dependabot alerts and security updates, secret scanning, and push protection enabled for any future repository | 31 July 2026 |
 
 There is no shared account or separate project login. Mark's existing GitHub account owns the organisation.
 
 ## Organisation profile repository
 
-The public `nz-ledger/.github` repository uses `main` and contains `profile/README.md`. Issues, Discussions, wiki, Projects, and Actions are disabled. The profile uses the required independent, neutral wording and makes no production, regulatory, professional-approval, commercial-branding, sponsorship, or fundraising claim.
+The public `nz-ledger/.github` repository uses `main` and contains `profile/README.md`. Issues, Discussions, wiki, Projects, and Actions are disabled. Its `main` branch has active pull-request, deletion, force-update, linear-history, squash-only, and conversation-resolution protections with the owner emergency bypass. Secret scanning, push protection, dependency alerts, automated security fixes, squash-only merging, automatic branch deletion, branch updates, and DCO web sign-off are enabled. The profile uses the required independent, neutral wording and makes no production, regulatory, professional-approval, commercial-branding, sponsorship, or fundraising claim.
 
 ## Main repository
 
@@ -91,6 +95,10 @@ The approving-review count is zero because the project has one active maintainer
 ### Release tags
 
 Active repository ruleset `Protect release tags` (`20086242`) applies to `refs/tags/v*` and restricts creation, update, deletion, and non-fast-forward changes. Organisation owners retain the emergency bypass. No release tag exists.
+
+### Organisation profile main branch
+
+Active repository ruleset `Protect main` (`20088001`) applies to `refs/heads/main` in `nz-ledger/.github`. It requires pull requests, resolved conversations, linear history, and squash merging, and blocks deletion and non-fast-forward updates. The approving-review count remains zero while there is one active maintainer, and organisation owners retain the emergency bypass.
 
 ## Actions and automation
 
@@ -169,6 +177,8 @@ The bootstrap tree was checked for:
 
 The public Packages page displays GitHub's get-started state rather than a published package list. No package manifest or package-publishing workflow exists.
 
+The final Codex Security standard scan completed with full 43-file coverage. It found no secrets, unsafe workflow trigger, untrusted execution, mutable Action reference, product code, package-publication path, release path, or deployment path. Its sole reportable finding is the known low-severity ownership-continuity gap: the organisation has one owner and no independent recovery identity.
+
 ## Deferred implementation and release gates
 
 The following controls require software or additional maintainers and are not represented as complete:
@@ -186,4 +196,3 @@ No software package may be released until the applicable implementation-phase se
 ## Remaining human actions
 
 1. Select and onboard one trusted backup organisation owner when a suitable person becomes available. That person must use a secure 2FA method. Until then, ownership continuity remains below the founding requirement.
-2. Start the final Codex Security repository scan after all other bootstrap configuration and the closeout pull request are complete.
