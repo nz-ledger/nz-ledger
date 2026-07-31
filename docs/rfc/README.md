@@ -8,4 +8,4 @@ Start with a Discussion or issue, then copy `0000-template.md` using the next fo
 
 | RFC | Title | Status | Related issue |
 | --- | --- | --- | --- |
-| [0001](0001-canonical-accounting-domain.md) | Canonical accounting domain and invariants | Draft | #3 |
+| [0001](0001-canonical-accounting-domain.md) | Canonical accounting domain and invariants | Accepted | #3 |
