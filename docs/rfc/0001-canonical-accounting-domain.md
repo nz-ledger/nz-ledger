@@ -1,8 +1,8 @@
 # RFC 0001: Canonical accounting domain and invariants
 
-- **Status:** Draft
+- **Status:** Accepted
 - **Author:** `@nz365guy`
-- **Reviewers:** Maintainer, independent accounting-domain reviewer, security reviewer
+- **Reviewers:** `@nz365guy` (sole-maintainer domain and decision review), Codex Security (security review); independent accounting-domain review deferred under the bootstrap exception below
 - **Created:** 2026-07-31
 - **Related issues:** #3
 
@@ -636,12 +636,12 @@ Rejected. Immutable audit-domain facts and deterministic replay do not require u
 
 ## Validation
 
-Acceptance requires all of the following:
+Acceptance and subsequent delivery use the following gates:
 
 1. Every concept above has explicit identity, lifecycle, relationships, temporal basis, and isolation behaviour.
 2. Every `KRN-*` invariant is judged mechanically testable in principle.
 3. The golden scenarios demonstrate sole-operator, multi-entity, branch, project, subledger, structured-evidence, bank, agent, atomic acceptance, policy-change, close-correction, temporal-view, export, substitution, and fail-closed control-account cases without implementing those modules.
-4. An independent accounting-domain reviewer records whether the vocabulary and invariants are suitable across for-profit, public-benefit, trust, not-for-profit, and minimum-reporting contexts.
+4. During sole-maintainer bootstrap, the maintainer MAY accept this documentation-only RFC after recording a domain self-review and disclosing that the review is not independent. An independent accounting-domain reviewer MUST record whether the vocabulary and invariants are suitable across for-profit, public-benefit, trust, not-for-profit, and minimum-reporting contexts before product implementation depends on this RFC or before production use, whichever is earlier. That review MUST also be requested promptly when a suitably qualified independent reviewer becomes available, including an additional maintainer who is suitably qualified and was not involved in the original drafting or acceptance.
 5. A security reviewer records whether isolation, identity, correction, temporal, evidence, idempotency, and direct-write threats are addressed.
 6. Maintainer review confirms consistency with the charter, architecture, founding decisions, glossary, threat model, capability model, conformance direction, and human-agent model.
 7. #5, #6, #8, #9, #10, #11, #12, #15, #17, and #19 confirm or refine the deferred details without weakening these invariants.
@@ -649,21 +649,21 @@ Acceptance requires all of the following:
 
 ## Decision register
 
-| ID | Proposed decision | Status | Rationale | Owner or follow-up |
+| ID | Decision | Status | Rationale | Owner or follow-up |
 | --- | --- | --- | --- | --- |
-| `DOM-D001` | Tenant is the highest security and administration boundary, not an accounting entity. | Proposed | Separates isolation from accounting and reporting meaning. | #3 |
-| `DOM-D002` | Legal entity is the mandatory posting and accounting-isolation boundary. | Proposed | Preserves accountable books even when reporting composition differs. | #3 |
-| `DOM-D003` | Ledger is a legal-entity accounting namespace; book is an independently balanced purpose and measurement boundary. | Proposed | Makes ownership, balance, and multiple-book use explicit. | #3 |
-| `DOM-D004` | Reporting entity is a presentation composition above legal-entity postings. | Proposed | XRB frameworks do not equate reporting entity and legal entity. | #30 |
-| `DOM-D005` | Journal proposal and posted journal are distinct records, but successful acceptance and creation of exactly one posted journal form one atomic transition and complete outcome. | Proposed | Separates intent from immutable financial fact without permitting an accepted-without-journal state. | #3, envelopes in #8 |
-| `DOM-D006` | Posted journals have one permanent state, `posted`; correction state is derived from linked journals. | Proposed | Prevents history mutation and ambiguous status. | #3 |
-| `DOM-D007` | Every journal is balanced in one book's applicable functional context. | Proposed | Creates a deterministic measurement and isolation boundary. | Exact semantics in #5 and #15 |
-| `DOM-D008` | Effective time, accounting date, and recorded time are distinct explicit inputs. | Proposed | Supports period control and historical accountability. | Contracts in #8, persistence in #11, views in #12 |
-| `DOM-D009` | Accounts and analytical dimensions use stable identity with effective-dated versions. | Proposed | Historical meaning survives renaming, reclassification, and reorganisation. | #3, canonical form in #6 |
-| `DOM-D010` | Business domains retain detail and compile controlled journal proposals. | Proposed | Avoids an overgrown kernel and preserves evidence and reconciliation. | Module issues and #19 |
-| `DOM-D011` | Original evidence, derived data, policy versions, and report calculations remain separate typed references. | Proposed | Prevents source substitution and silent retroactive change. | #8, #10, #12, #13 |
-| `DOM-D012` | All actors use the same controlled accounting semantics. | Proposed | Actor type cannot weaken integrity. | Authority semantics in #17 |
-| `DOM-D013` | An active control account fails closed unless exactly one accepted effective posting policy permits the authenticated source or an explicitly authorised and evidenced exception. | Proposed | Prevents ordinary posting authority or missing configuration from bypassing subledger reconciliation. | #3, operating workflow in #19 |
+| `DOM-D001` | Tenant is the highest security and administration boundary, not an accounting entity. | Accepted | Separates isolation from accounting and reporting meaning. | #3 |
+| `DOM-D002` | Legal entity is the mandatory posting and accounting-isolation boundary. | Accepted | Preserves accountable books even when reporting composition differs. | #3 |
+| `DOM-D003` | Ledger is a legal-entity accounting namespace; book is an independently balanced purpose and measurement boundary. | Accepted | Makes ownership, balance, and multiple-book use explicit. | #3 |
+| `DOM-D004` | Reporting entity is a presentation composition above legal-entity postings. | Accepted | XRB frameworks do not equate reporting entity and legal entity. | #30 |
+| `DOM-D005` | Journal proposal and posted journal are distinct records, but successful acceptance and creation of exactly one posted journal form one atomic transition and complete outcome. | Accepted | Separates intent from immutable financial fact without permitting an accepted-without-journal state. | #3, envelopes in #8 |
+| `DOM-D006` | Posted journals have one permanent state, `posted`; correction state is derived from linked journals. | Accepted | Prevents history mutation and ambiguous status. | #3 |
+| `DOM-D007` | Every journal is balanced in one book's applicable functional context. | Accepted | Creates a deterministic measurement and isolation boundary. | Exact semantics in #5 and #15 |
+| `DOM-D008` | Effective time, accounting date, and recorded time are distinct explicit inputs. | Accepted | Supports period control and historical accountability. | Contracts in #8, persistence in #11, views in #12 |
+| `DOM-D009` | Accounts and analytical dimensions use stable identity with effective-dated versions. | Accepted | Historical meaning survives renaming, reclassification, and reorganisation. | #3, canonical form in #6 |
+| `DOM-D010` | Business domains retain detail and compile controlled journal proposals. | Accepted | Avoids an overgrown kernel and preserves evidence and reconciliation. | Module issues and #19 |
+| `DOM-D011` | Original evidence, derived data, policy versions, and report calculations remain separate typed references. | Accepted | Prevents source substitution and silent retroactive change. | #8, #10, #12, #13 |
+| `DOM-D012` | All actors use the same controlled accounting semantics. | Accepted | Actor type cannot weaken integrity. | Authority semantics in #17 |
+| `DOM-D013` | An active control account fails closed unless exactly one accepted effective posting policy permits the authenticated source or an explicitly authorised and evidenced exception. | Accepted | Prevents ordinary posting authority or missing configuration from bypassing subledger reconciliation. | #3, operating workflow in #19 |
 
 ## Open questions
 
@@ -689,7 +689,9 @@ These questions do not block review of the stable boundary, but each MUST be res
 
 ### Accounting-domain review
 
-Pending independent review. The reviewer must record scope, qualifications or relevant experience, findings, required changes, unresolved judgements, and whether acceptance is recommended. Review is not a general professional endorsement.
+On 31 July 2026, Mark Smith (`@nz365guy`) reviewed the vocabulary, invariants, scenarios, open questions, and deferred issue boundaries in his capacity as founder and sole maintainer and directed acceptance under the documented bootstrap exception. No separate person performed this review, so it is explicitly a domain self-review and not independent accounting-domain review or professional endorsement.
+
+Independent accounting-domain review is deferred, not waived permanently. Before product implementation depends on this RFC or before production use, whichever is earlier, a suitably qualified reviewer must record scope, qualifications or relevant experience, findings, required changes, unresolved judgements, and whether the RFC remains suitable. The review must also be requested promptly when a suitably qualified independent reviewer becomes available, including an additional maintainer who is suitably qualified and was not involved in the original drafting or acceptance. Material findings reopen the affected RFC decisions through the governance process.
 
 ### Security review
 
@@ -697,8 +699,8 @@ Codex Security reviewed this RFC on 31 July 2026 for context substitution, cross
 
 ### Maintainer review
 
-Pending. The maintainer records the final RFC status only after required review findings are resolved or explicitly assigned.
+On 31 July 2026, Mark Smith (`@nz365guy`) confirmed consistency with the charter, architecture, founding decisions, glossary, threat model, capability model, conformance direction, and human-agent model. He accepted the RFC with independent accounting-domain review explicitly assigned as the deferred gate above. This founder-led decision is recorded publicly in #3 and does not claim legal, tax, accounting, regulatory, professional, security, or production approval.
 
 ## Decision
 
-Pending review. If accepted, this RFC defines the canonical accounting-domain vocabulary and invariant catalogue for later design and implementation. Acceptance does not authorise product implementation or resolve the deferred contracts above.
+Accepted on 31 July 2026 by Mark Smith (`@nz365guy`) through the disclosed sole-maintainer bootstrap exception. This RFC defines the canonical accounting-domain vocabulary and invariant catalogue for dependent design work. Acceptance does not authorise product implementation, satisfy the independent-review gate above, or resolve the deferred contracts and open questions. Any later material change follows the RFC process and preserves this decision record.
