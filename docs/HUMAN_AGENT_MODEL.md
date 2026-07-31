@@ -37,7 +37,7 @@ Observe evidence
   -> escalate exceptions
 ```
 
-Acceptance, posting, and external completion are distinct states. Idempotency and correlation prevent duplicated intent from silently creating duplicated financial effects.
+Journal-proposal acceptance and internal posting are distinct audit-domain facts that commit together with exactly one posted journal in one atomic outcome. External submission and completion remain distinct later states. Idempotency binds a successful retry to the same complete outcome and journal identity, while correlation connects related intent and effects without implying completion.
 
 ## Risk-based approvals
 
