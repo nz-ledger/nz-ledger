@@ -4,7 +4,7 @@
 
 **Authenticated GitHub identity:** `@nz365guy`
 
-This report records verified bootstrap state for the public NZ Ledger repositories. A control is marked `Partial` or `Deferred` when its complete state has not been proved. No token, recovery code, private email address, or other secret is recorded here.
+This report records verified bootstrap state for the public NZ Ledger repositories. It is a historical closeout snapshot, not a live dashboard. Unless a later date is explicit, counts and terms such as `current` or `latest` refer to the setup date and named reviewed commits. Revalidate GitHub before relying on mutable settings or counts. A control is marked `Partial` or `Deferred` when its complete state has not been proved. No token, recovery code, private email address, or other secret is recorded here.
 
 ## Completion status
 
@@ -127,8 +127,8 @@ The only checked-in repository workflow is the official OpenSSF Scorecard analys
 | Secret scanning | Enabled |
 | Push protection | Enabled |
 | CodeQL default setup | Configured for `actions`, weekly, default query suite, GitHub-hosted standard runner |
-| CodeQL result | Latest analysis succeeded with zero results across 17 rules |
-| OpenSSF Scorecard workflow | Latest workflow run succeeded on the current `main` commit |
+| CodeQL result | At closeout, the latest analysis succeeded with zero results across 17 rules |
+| OpenSSF Scorecard workflow | At closeout, the latest workflow run succeeded on the reviewed `main` commit |
 | Installed GitHub Apps | None |
 | Repository secrets | Zero |
 | Repository environments | Zero |
@@ -153,7 +153,7 @@ GitHub Free reports `sha_pinning_required: false`; plan-level enforcement of SHA
 
 - 26 labels match the founding taxonomy: five type labels, 12 area labels, six review and contribution labels, and three priority labels.
 - 10 open milestones represent phases `0` through `9`; no speculative due dates were added.
-- 22 open, unassigned issues implement all 18 initial design or research backlog items and four bounded `good first issue` items.
+- At closeout, 22 open, unassigned issues implemented all 18 initial design or research backlog items and four bounded `good first issue` items.
 - Every issue contains Purpose, Scope, Non-goals, Dependencies, Acceptance criteria, Expected artefacts, Required review labels, and Milestone sections.
 - Each good first issue identifies `@nz365guy` as maintainer reviewer.
 - The six Discussion categories are Announcements, General, Architecture, New Zealand policy and accounting, Integrations and extensions, and Questions. Announcements are maintainer-restricted, Questions are answer-enabled, and the other four use open-ended discussion format.
