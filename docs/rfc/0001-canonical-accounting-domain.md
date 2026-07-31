@@ -256,7 +256,7 @@ No posted journal crosses a tenant, legal entity, ledger, or book boundary. Inte
 
 **Identity:** One stable `journal_proposal_id` plus immutable revision number. Each revision has its own canonical payload digest when #6 is accepted.
 
-**Lifecycle:** `draft -> submitted -> accepted | rejected | withdrawn | superseded`. Acceptance records an outcome and MAY produce one posted journal. Editing creates a new revision; it does not rewrite a submitted or decided revision.
+**Lifecycle:** `draft -> submitted -> accepted | rejected | withdrawn | superseded`. Successful acceptance MUST create exactly one posted journal and record one complete outcome containing that journal's identity in the same atomic transition. No committed `accepted` state exists without that journal. Rejection, withdrawal, and supersession are non-posting terminal outcomes. Editing creates a new revision; it does not rewrite a submitted or decided revision.
 
 **Relationships:** A proposal names one tenant, legal entity, ledger, and book; proposed lines; business-event, evidence, policy, and authority references; command and idempotency context; effective time; accounting date; and all nondeterministic inputs.
 
@@ -328,7 +328,7 @@ No posted journal crosses a tenant, legal entity, ledger, or book boundary. Inte
 
 **Lifecycle:** Designations are `proposed -> active -> inactive` and retain history. Changing a designation does not reclassify old postings silently.
 
-**Relationships:** A designation names the subledger or source namespace, reconciliation basis, and any explicit posting restrictions. Direct posting is not universally forbidden, but any restriction selected by accepted configuration MUST be enforced through the command layer and recorded.
+**Relationships:** A designation names the subledger or source namespace, reconciliation basis, and exactly one accepted active posting policy. Missing, inactive, or ambiguous policy fails closed. Direct posting is not universally forbidden, but it is permitted only when the effective policy explicitly allows the authenticated source or a separately authorised and evidenced exception. The policy version and decision MUST be enforced through the command layer and recorded.
 
 **Temporal basis:** The designation and restrictions are effective-dated and recorded. Reconciliation outputs retain the version used.
 
@@ -434,10 +434,11 @@ An implementation MUST be able to preserve both the current corrected record and
 
 ```text
 Journal proposal revision
-  draft -> submitted -> accepted -> posted journal created atomically
-                    |-> rejected
-                    |-> withdrawn
-                    `-> superseded by a new immutable revision
+  draft -> submitted -- accept --> accepted + exactly one posted journal
+                     |             one atomic transition and recorded outcome
+                     |-- reject --> rejected
+                     |-- withdraw -> withdrawn
+                     `-- replace --> superseded by a new immutable revision
 
 Posted journal
   posted -> posted forever
@@ -479,13 +480,13 @@ Each invariant below is independent of transport and storage. Failure codes are 
 | `KRN-017` | Internal identifiers MUST be typed, stable, unique in their declared scope, supplied explicitly, and never recycled to a different object. | Protects referential integrity and deterministic replay. | A supplied journal ID is unused in B1. | A deleted draft ID is reused for a posted journal. | `IDENTITY_CONFLICT` | Object substitution and audit ambiguity. |
 | `KRN-018` | External identifiers MUST include type and issuer or namespace, and MUST NOT be treated as internal identity or global authority. | External values have different uniqueness and lifecycle rules. | `issuer=bank-x`, `type=statement-entry`, `value=123`. | Lookup uses bare value `123` across tenants. | `EXTERNAL_ID_AMBIGUOUS` | Cross-source or cross-tenant substitution. |
 | `KRN-019` | Tenant and legal-entity scope MUST be enforced on commands, queries, events, evidence references, background work, exports, and privileged operations. | Isolation must hold across every path. | A T1 export contains only authorised T1/E1 records. | A retry job resolves an account without tenant scope. | `ISOLATION_VIOLATION` | Confidentiality and financial-integrity breach. |
-| `KRN-020` | Acceptance MUST be idempotent in the scope and semantics later defined by #8: the same key and canonical payload returns the recorded outcome; a different payload conflicts. | Prevents duplicate financial effects. | A retry returns the original J1 outcome. | The same key posts J2 with changed lines. | `IDEMPOTENCY_CONFLICT` | Duplicate or substituted posting. |
-| `KRN-021` | Proposal acceptance, internal posting, external submission, and external completion MUST remain distinct facts. No later state is inferred from intent or an earlier state. | Prevents false success across trust boundaries. | A journal is posted while payment outcome remains unknown. | Posting marks a bank transfer completed. | `OUTCOME_INFERENCE_FORBIDDEN` | False external completion and unreconciled loss. |
+| `KRN-020` | Acceptance MUST be idempotent in the scope and semantics later defined by #8: the same key and canonical payload returns the same complete outcome, including the same `journal_id` after success; a different payload conflicts. | Prevents duplicate financial effects. | A retry returns the original accepted outcome and J1 identity. | A retry returns an accepted outcome without J1 or posts J2. | `IDEMPOTENCY_CONFLICT` | Duplicate or substituted posting. |
+| `KRN-021` | Proposal acceptance and internal posting MUST remain distinct audit-domain facts recorded in the same atomic acceptance transition. External submission and external completion remain distinct later facts. No later state is inferred from intent or an earlier state. | Preserves atomic accounting integrity without asserting success across trust boundaries. | Acceptance and J1 posting facts commit together while payment outcome remains unknown. | Acceptance commits without a journal, or posting marks a bank transfer completed. | `OUTCOME_INFERENCE_FORBIDDEN` | Partial internal success, false external completion, or unreconciled loss. |
 | `KRN-022` | The kernel MUST NOT infer missing identifiers, time, values, rates, evidence, policy, authority, dimensions, success, or external state. | Determinism requires complete explicit inputs. | Missing rate rejects the proposal. | Current system time or a fetched rate fills the gap. | `EXPLICIT_INPUT_REQUIRED` | Nondeterminism and authority bypass. |
 | `KRN-023` | Identical explicit input, accepted versions, and initial state MUST produce the same decision, financial result, audit-domain facts, aggregate version, and canonical data before transport metadata. | Reproducibility is a financial control. | Locale and insertion order do not change output. | Host timezone changes the accounting period. | `NONDETERMINISTIC_RESULT` | Results cannot be audited or independently reproduced. |
-| `KRN-024` | A proposal MUST NOT affect balances, period totals, account activity, or posted-history queries until accepted posting succeeds atomically. | Separates intent from financial fact. | A submitted proposal appears only in workflow queries. | Trial Balance includes an unapproved draft. | `PROPOSAL_NOT_POSTED` | Unauthorised or misleading financial statements. |
+| `KRN-024` | A proposal MUST NOT affect balances, period totals, account activity, or posted-history queries before acceptance. Successful acceptance, exactly one posted journal and its lines, the acceptance and posting facts, attribution, and the complete idempotent outcome MUST commit atomically; failure commits none of them. | Separates intent from financial fact and excludes partial acceptance. | A submitted proposal appears only in workflow queries; acceptance commits J1 and its complete outcome together. | Acceptance commits without a journal, or a journal becomes visible without its acceptance outcome. | `PROPOSAL_NOT_POSTED` | Unauthorised, partial, or misleading financial state. |
 | `KRN-025` | A consequential transition MUST record the authenticated principal, applicable authority decision, command, correlation, causation, evidence, and aggregate version required by accepted contracts. | Makes every effect attributable. | J1 links the permitting decision and command. | A scheduled job posts with no principal. | `ATTRIBUTION_REQUIRED` | Repudiation and mandate bypass. |
-| `KRN-026` | A control-account restriction selected by accepted effective configuration MUST be enforced. A subledger, integration, extension, or agent MUST NOT bypass it through direct storage access. | Preserves subledger reconciliation. | A permitted subledger command posts under the active rule. | An extension writes a control account row directly. | `CONTROL_ACCOUNT_RESTRICTED` | Concealed control-account drift. |
+| `KRN-026` | Every posting to an active control account MUST resolve exactly one accepted effective posting policy. Missing, inactive, ambiguous, or source-mismatched policy is denied. Only a matching authenticated source or a separately authorised and evidenced exception MAY post. A subledger, integration, extension, or agent MUST NOT bypass this decision through direct storage access. | Preserves subledger reconciliation while allowing explicit legitimate exceptions. | A matching subledger command posts under the recorded active policy, or an authorised exception posts with its evidence. | A general-journal command posts when no policy exists, or an extension writes a row directly. | `CONTROL_ACCOUNT_RESTRICTED` | Concealed control-account drift or authority bypass. |
 | `KRN-027` | Period, account, classification, dimension, control-designation, and relationship changes MUST be versioned and audited; they MUST NOT rewrite the configuration used by prior postings. | Preserves historical interpretation. | A new classification begins prospectively. | An old account version is overwritten. | `CONFIGURATION_HISTORY_IMMUTABLE` | Silent historical reclassification. |
 | `KRN-028` | Original evidence MUST remain distinguishable from derived data, and a derived record MUST retain its provenance link. | Prevents extraction from replacing source truth. | An extracted total references the immutable source document version. | Parsed text overwrites the original evidence. | `EVIDENCE_PROVENANCE_INVALID` | Fabricated or unverifiable financial support. |
 | `KRN-029` | Policy and report-calculation versions material to a result MUST be explicit and retained; supersession MUST NOT change a prior posting or output silently. | Separates stable mechanics from changing rules. | A corrected report records a new calculation version. | Updating a policy silently alters an as-filed output. | `VERSION_REFERENCE_REQUIRED` | Policy downgrade or retroactive manipulation. |
@@ -529,7 +530,7 @@ Expected outcome: the bank event is evidence of an external observation, not jou
 
 An agent with a limited mandate supplies a complete proposal inside one entity and book.
 
-Expected outcome: actor type does not change invariants. The proposal remains non-posting until authority and approval requirements permit the command. Confidence and tool availability grant no authority.
+Expected outcome: actor type does not change invariants. The proposal remains non-posting until authority and approval requirements permit the command. Successful acceptance creates exactly one posted journal in the same atomic transition and records a complete outcome containing its identity. A same-key, same-payload retry returns that outcome without creating another journal. Confidence and tool availability grant no authority.
 
 ### `DOM-S007`: Reporting-policy change
 
@@ -566,6 +567,12 @@ Expected outcome: reporting composition selects and eliminates authorised record
 A valid command for tenant T1 is altered to reference an account, dimension, evidence item, or correction target from T2 or another legal entity.
 
 Expected outcome: validation fails closed with a context or isolation error before any posting or audit success event is produced.
+
+### `DOM-S013`: Control-account posting policy
+
+A principal authorised for ordinary general-journal commands targets an active control account first without one effective posting policy, then through its matching subledger source, and finally through a separately authorised and evidenced exception.
+
+Expected outcome: the missing policy attempt fails with `CONTROL_ACCOUNT_RESTRICTED`. The matching source and explicit exception may post only when all other invariants pass, and each posted journal records the effective policy version, authenticated source, authority decision, and exception evidence where applicable.
 
 ## Alternatives
 
@@ -633,7 +640,7 @@ Acceptance requires all of the following:
 
 1. Every concept above has explicit identity, lifecycle, relationships, temporal basis, and isolation behaviour.
 2. Every `KRN-*` invariant is judged mechanically testable in principle.
-3. The golden scenarios demonstrate sole-operator, multi-entity, branch, project, subledger, structured-evidence, bank, agent, policy-change, close-correction, temporal-view, export, and substitution cases without implementing those modules.
+3. The golden scenarios demonstrate sole-operator, multi-entity, branch, project, subledger, structured-evidence, bank, agent, atomic acceptance, policy-change, close-correction, temporal-view, export, substitution, and fail-closed control-account cases without implementing those modules.
 4. An independent accounting-domain reviewer records whether the vocabulary and invariants are suitable across for-profit, public-benefit, trust, not-for-profit, and minimum-reporting contexts.
 5. A security reviewer records whether isolation, identity, correction, temporal, evidence, idempotency, and direct-write threats are addressed.
 6. Maintainer review confirms consistency with the charter, architecture, founding decisions, glossary, threat model, capability model, conformance direction, and human-agent model.
@@ -648,7 +655,7 @@ Acceptance requires all of the following:
 | `DOM-D002` | Legal entity is the mandatory posting and accounting-isolation boundary. | Proposed | Preserves accountable books even when reporting composition differs. | #3 |
 | `DOM-D003` | Ledger is a legal-entity accounting namespace; book is an independently balanced purpose and measurement boundary. | Proposed | Makes ownership, balance, and multiple-book use explicit. | #3 |
 | `DOM-D004` | Reporting entity is a presentation composition above legal-entity postings. | Proposed | XRB frameworks do not equate reporting entity and legal entity. | #30 |
-| `DOM-D005` | Journal proposal and posted journal are distinct records. | Proposed | Separates intent and workflow from immutable financial fact. | #3, envelopes in #8 |
+| `DOM-D005` | Journal proposal and posted journal are distinct records, but successful acceptance and creation of exactly one posted journal form one atomic transition and complete outcome. | Proposed | Separates intent from immutable financial fact without permitting an accepted-without-journal state. | #3, envelopes in #8 |
 | `DOM-D006` | Posted journals have one permanent state, `posted`; correction state is derived from linked journals. | Proposed | Prevents history mutation and ambiguous status. | #3 |
 | `DOM-D007` | Every journal is balanced in one book's applicable functional context. | Proposed | Creates a deterministic measurement and isolation boundary. | Exact semantics in #5 and #15 |
 | `DOM-D008` | Effective time, accounting date, and recorded time are distinct explicit inputs. | Proposed | Supports period control and historical accountability. | Contracts in #8, persistence in #11, views in #12 |
@@ -656,6 +663,7 @@ Acceptance requires all of the following:
 | `DOM-D010` | Business domains retain detail and compile controlled journal proposals. | Proposed | Avoids an overgrown kernel and preserves evidence and reconciliation. | Module issues and #19 |
 | `DOM-D011` | Original evidence, derived data, policy versions, and report calculations remain separate typed references. | Proposed | Prevents source substitution and silent retroactive change. | #8, #10, #12, #13 |
 | `DOM-D012` | All actors use the same controlled accounting semantics. | Proposed | Actor type cannot weaken integrity. | Authority semantics in #17 |
+| `DOM-D013` | An active control account fails closed unless exactly one accepted effective posting policy permits the authenticated source or an explicitly authorised and evidenced exception. | Proposed | Prevents ordinary posting authority or missing configuration from bypassing subledger reconciliation. | #3, operating workflow in #19 |
 
 ## Open questions
 
@@ -685,7 +693,7 @@ Pending independent review. The reviewer must record scope, qualifications or re
 
 ### Security review
 
-Pending security review. At minimum, review context substitution, cross-tenant and cross-entity lookup, direct writes, mutable history, correction cycles, duplicate acceptance, temporal confusion, evidence substitution, policy substitution, and deterministic failure behaviour.
+Codex Security reviewed this RFC on 31 July 2026 for context substitution, cross-tenant and cross-entity lookup, direct writes, mutable history, correction cycles, duplicate acceptance, temporal confusion, evidence substitution, policy substitution, and deterministic failure behaviour. Follow-up changes make control-account policy resolution fail closed and bind successful acceptance to exactly one posted journal in one atomic, idempotent outcome. The exact idempotency namespace and authority-ordering contract remains assigned to #8 and #17 and MUST preserve these invariants.
 
 ### Maintainer review
 
