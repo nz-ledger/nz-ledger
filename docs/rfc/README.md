@@ -11,3 +11,4 @@ Start with a Discussion or issue, then copy `0000-template.md` using the next fo
 | [0001](0001-canonical-accounting-domain.md) | Canonical accounting domain and invariants | Accepted | #3 |
 | [0002](0002-auditability-and-assurance.md) | Auditability and assurance model | Draft | To be opened |
 | [0003](0003-exact-values-instruments-valuations.md) | Exact quantities, currencies, instruments, and valuations | Draft | #5 |
+| [0004](0004-canonical-serialisation-and-schemas.md) | Canonical serialisation, schemas, and compatibility | Draft | #6 |
