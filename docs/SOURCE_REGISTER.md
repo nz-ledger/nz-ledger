@@ -66,6 +66,7 @@ This maintainable research index records primary official sources and the projec
 | Financial Markets Authority, [Designations](https://www.fma.govt.nz/business/legislation/secondary-legislation/designations/) | Financial-market classification research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
 | International Organization for Standardization, [ISO 24165-1:2025, Digital token identifier: method for registration and assignment](https://www.iso.org/standard/85546.html) | Registry-backed digital-token identity for the `dti` instrument scheme in draft RFC 0003, supporting FD-010 | Accessed: 1 August 2026; second edition, published May 2025, superseding ISO 24165-1:2021; review owner: `@nz365guy`; review status: Catalogue metadata confirmed through the ISO catalogue listing. The standard text is paywalled and has not been read; human confirmation outstanding | Confirm identifier structure, registry operation, and assignment rules before any implementation depends on a structural property. Identity is not custody: nothing here extends the project into a regulated digital-asset service. |
 | International Organization for Standardization, [ISO 24165-2:2025, Digital token identifier: data elements for registration](https://www.iso.org/standard/85547.html) | Digital-token metadata elements informing instrument metadata in draft RFC 0003 | Accessed: 1 August 2026; second edition, published June 2025; review owner: `@nz365guy`; review status: Catalogue metadata confirmed through the ISO catalogue listing. The standard text is paywalled and has not been read; human confirmation outstanding | Determine which registered data elements, if any, the instrument metadata contract should mirror, and resolve `EXV-Q006` with the digital-instrument boundary in issue #16. |
+| Digital Token Identifier Foundation, [DTI Foundation](https://dtif.org) | The ISO 24165 registration authority and the public registry an implementation would resolve a `dti` instrument code against under draft RFC 0003 | Accessed: 1 August 2026; site content current to April 2026; a non-profit division of Etrading Software, operating a searchable public registry with a downloadable register and a published JSON schema; review owner: `@nz365guy`; review status: Source verified | This is the operative source for the `dti` scheme, because RFC 0003 depends on an identifier being registry-assigned rather than on any structural detail of the paywalled standard text. Confirm registry availability, licensing, and update cadence before an implementation depends on resolving codes against it. Registry access is reference data only and grants no custody or regulated-service capability. |
 
 ## Technical and audit standards
 
@@ -97,7 +98,7 @@ Each row is upgraded to genuine effective-date, publication-date, and interpreta
 detail when the policy or design work that depends on it begins, and no policy proposal
 may rely on a row that still carries placeholder metadata. Rows updated with completed
 research so far: Tax Administration Act 1994 section 22; the XRB rows carrying explicit
-effective and update dates; RFC 8785; IEEE 754-2019.
+effective and update dates; RFC 8785; IEEE 754-2019; the DTI Foundation registry.
 
 Three rows added for draft RFC 0003 carry an explicit partial-verification status rather than
 "Source verified": ISO 4217, ISO 24165-1:2025, and ISO 24165-2:2025 were confirmed through the
@@ -105,7 +106,9 @@ ISO catalogue listing but could not be retrieved directly, because the ISO site 
 403 to automated clients and the standard texts are paywalled. The ISO 20022 row was retrieved
 but its specific amount-representation rules were not confirmed in the text. Those rows are
 research leads pending human confirmation, and no requirement in RFC 0003 depends on an
-unconfirmed structural detail from any of them.
+unconfirmed structural detail from any of them. For the `dti` instrument scheme specifically,
+the verified DTI Foundation registry row carries the dependency, so the two paywalled ISO 24165
+rows record provenance rather than gate the design.
 
 ## Maintenance
 

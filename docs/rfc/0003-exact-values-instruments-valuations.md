@@ -87,7 +87,10 @@ in `../SOURCE_REGISTER.md` with its access date.
   FD-010 workable without asserting anything about custody or regulated services. Only
   catalogue metadata for both parts has been confirmed; the standard text is paywalled and has
   not been read, so the `dti` scheme in this draft depends on the identifier existing and
-  being registry-assigned, not on any structural detail of the standard.
+  being registry-assigned, not on any structural detail of the standard. The Digital Token
+  Identifier Foundation, the appointed registration authority, publishes a searchable public
+  registry, and that registry, not the paywalled text, is what an implementation would resolve
+  a `dti` code against.
 - **IEEE 754-2019** remains the current floating-point standard. Its `decimal128` interchange
   format carries 34 significant digits. This RFC uses that figure only as a sizing reference
   for a global digit ceiling, so that a conforming implementation may be backed by a decimal
