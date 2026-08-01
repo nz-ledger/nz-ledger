@@ -6,13 +6,16 @@ NZ Ledger will define observable, language-neutral behaviour so independent impl
 
 - JSON Schemas define versioned command, query, event, evidence, error, and report payloads.
 - Canonical serialisation adopts RFC 8785 (JSON Canonicalization Scheme) as its baseline, defining Unicode handling, object-key ordering, arrays, absent versus null values, identifiers, dates, timestamps, exact decimals, hashes, and signatures. RFC 8785's known weakness, IEEE 754 number canonicalisation, does not apply because public financial values are decimal strings, never JSON numbers. The baseline is a default subject to confirmation when the canonical-serialisation design issue is worked; any departure requires recorded evidence.
-- Financial values are decimal strings with explicit precision and scale rules, never floating-point JSON numbers.
+- Financial values are decimal strings with explicit precision and scale rules, never floating-point JSON numbers. Draft RFC 0003 proposes the exact value model, the decimal-string grammar, per-class bounds, comparison rules, rounding modes, instrument identity, valuation provenance, and the normative allocation algorithm those vectors test.
 - Compatibility rules define additive, deprecating, and breaking changes.
 
 ## Test layers
 
 - **Schema tests:** valid, invalid, boundary, and forward-compatibility documents.
 - **Canonical serialisation tests:** byte-identical results and stable hashes.
+- **Exact-value tests:** decimal-string grammar acceptance and rejection, per-class bounds at and beyond each limit, sign and zero handling, numeric versus canonical-form equality, order-independent aggregation, and every named rounding mode at, above, and below an exact half.
+- **Valuation tests:** both quotation directions, inverted direction labels, incomplete provenance records, rate bounds, and re-performance of a supplied functional amount from its quantity, rate, target scale, and mode.
+- **Allocation tests:** residual distribution and tie-breaking, negative totals, zero weights, weights that do not sum to one, nominated residual targets, and the exact-sum post-condition.
 - **Command tests:** identity, mandate, idempotency, effective and recorded time, invariants, and error behaviour.
 - **Query tests:** authorisation, temporal basis, pagination, redaction, and stable result semantics.
 - **Event tests:** envelope, ordering boundary, duplication, replay, redaction, and compatibility.

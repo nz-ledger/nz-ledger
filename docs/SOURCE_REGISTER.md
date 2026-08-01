@@ -2,7 +2,7 @@
 
 This maintainable research index records primary official sources and the project requirement each supports. It is not legal, tax, accounting, regulatory, privacy, or security advice. A link in this register does not by itself establish an interpretation or implemented rule.
 
-**Access check date:** 31 July 2026
+**Access check date:** 1 August 2026
 
 ## Company and tax records
 
@@ -36,6 +36,7 @@ This maintainable research index records primary official sources and the projec
 | External Reporting Board, [Public Benefit Entities' Conceptual Framework](https://www.xrb.govt.nz/dmsdocument/2855/) | Public-benefit reporting-entity concepts and cross-sector durability test for RFC 0001 | Accessed: 31 July 2026; current compiled framework checked; review owner: `@nz365guy`; review status: Source verified | Recheck the XRB update effective for periods beginning on or after 1 January 2028 before policy or reporting implementation. |
 | External Reporting Board, [NZ IAS 8](https://standards.xrb.govt.nz/standards-navigator/nz-ias-8/) | Accounting-policy, estimate, and prior-period-error boundary for applicable Tier 1 and Tier 2 for-profit entities | Accessed: 31 July 2026; current navigator content checked; amendments table approved through 31 January 2022; review owner: `@nz365guy`; review status: Source verified | Use through applicable effective-dated policy and reporting work; do not present its scoped requirements as universal kernel rules. |
 | External Reporting Board, [NZ IAS 21](https://www.xrb.govt.nz/standards/accounting-standards/for-profit-entities/nz-ias-21/) | Foreign-currency accounting research for applicable entities | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| International Organization for Standardization, [ISO 4217 currency codes](https://www.iso.org/iso-4217-currency-codes.html) | Currency identity and declared minor-unit scale for the `iso4217` instrument scheme in draft RFC 0003 | Accessed: 1 August 2026; 2015 edition; published code-list data current to 9 February 2026; review owner: `@nz365guy`; review status: Catalogue metadata confirmed through the ISO catalogue listing and secondary summaries. The ISO site returns HTTP 403 to automated clients, so the standard page and code list have not been read directly and human confirmation is outstanding | Confirm the current edition, amendment status, and the authoritative code-list publication before any implementation treats a currency scale as data. Do not compile a minor unit into code; treat it as effective-dated instrument metadata. |
 
 ## Banking and payments
 
@@ -63,12 +64,16 @@ This maintainable research index records primary official sources and the projec
 | Department of Internal Affairs, [Virtual asset service providers](https://www.dia.govt.nz/AML-CFT-Virtual-Asset-Service-Providers) | Custody, exchange, transfer, and regulated-service boundary | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
 | Department of Internal Affairs, [AML/CFT legislation](https://www.dia.govt.nz/AML-CFT-Legislation) | Regulated capability boundary | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
 | Financial Markets Authority, [Designations](https://www.fma.govt.nz/business/legislation/secondary-legislation/designations/) | Financial-market classification research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| International Organization for Standardization, [ISO 24165-1:2025, Digital token identifier: method for registration and assignment](https://www.iso.org/standard/85546.html) | Registry-backed digital-token identity for the `dti` instrument scheme in draft RFC 0003, supporting FD-010 | Accessed: 1 August 2026; second edition, published May 2025, superseding ISO 24165-1:2021; review owner: `@nz365guy`; review status: Catalogue metadata confirmed through the ISO catalogue listing. The standard text is paywalled and has not been read; human confirmation outstanding | Confirm identifier structure, registry operation, and assignment rules before any implementation depends on a structural property. Identity is not custody: nothing here extends the project into a regulated digital-asset service. |
+| International Organization for Standardization, [ISO 24165-2:2025, Digital token identifier: data elements for registration](https://www.iso.org/standard/85547.html) | Digital-token metadata elements informing instrument metadata in draft RFC 0003 | Accessed: 1 August 2026; second edition, published June 2025; review owner: `@nz365guy`; review status: Catalogue metadata confirmed through the ISO catalogue listing. The standard text is paywalled and has not been read; human confirmation outstanding | Determine which registered data elements, if any, the instrument metadata contract should mirror, and resolve `EXV-Q006` with the digital-instrument boundary in issue #16. |
 
 ## Technical and audit standards
 
 | Authority and source | Project relevance | Source metadata | Open interpretation questions |
 | --- | --- | --- | --- |
 | IETF, [RFC 8785: JSON Canonicalization Scheme](https://www.rfc-editor.org/info/rfc8785/) | Baseline for canonical serialisation in conformance design | Accessed: 1 August 2026; published: June 2020; review owner: `@nz365guy`; review status: Source verified | JCS canonicalises IEEE 754 numbers, which the project avoids by serialising financial values as decimal strings; confirm string-value handling and any profile restrictions when the canonical-serialisation design issue is worked. |
+| IEEE, [IEEE 754-2019: Standard for Floating-Point Arithmetic](https://standards.ieee.org/ieee/754/6210/) | Sizing reference only for the 34-digit coefficient ceiling in draft RFC 0003, confirming a widely implemented decimal precision; not adopted as a contract type | Accessed: 1 August 2026; published 22 July 2019, superseding IEEE 754-2008; no later revision found as at August 2026; review owner: `@nz365guy`; review status: Source verified | Public financial values remain decimal strings under FD-008 and `KRN-007`. Confirm that no later revision changes the `decimal128` precision before the bound is treated as settled. |
+| ISO 20022 Technical Support Group, [Generation of JSON Schema Draft 2020-12 for ISO 20022](https://www.iso20022.org/sites/default/files/media/file/ISO_20022_Generation_of_JSON_Schema_Draft_2020_12_for_ISO_20022_2013_10June2025.pdf) | Corroborating practice reference for decimal-string amount representation, separator, and digit-count constraints in draft RFC 0003 | Accessed: 1 August 2026; document dated July 2025; review owner: `@nz365guy`; review status: Document retrieved but the specific amount-representation rules were not confirmed in the text. Separator and digit-count claims currently rest on secondary summaries | Read the primary ISO 20022 amount and JSON-representation rules before citing them as more than corroboration. No requirement in RFC 0003 depends on this row. |
 | OECD, Standard Audit File for Tax (SAF-T) guidance | Research input for assertion-aligned, audit-consumable export design (draft RFC 0002) | Accessed: not yet; review owner: `@nz365guy`; review status: Unreviewed | New Zealand does not mandate SAF-T. Determine whether structural alignment benefits export consumers, which SAF-T version to reference, and applicability boundaries, before any mapping is implemented. |
 
 ## Repository and package supply chain
@@ -92,7 +97,15 @@ Each row is upgraded to genuine effective-date, publication-date, and interpreta
 detail when the policy or design work that depends on it begins, and no policy proposal
 may rely on a row that still carries placeholder metadata. Rows updated with completed
 research so far: Tax Administration Act 1994 section 22; the XRB rows carrying explicit
-effective and update dates; RFC 8785.
+effective and update dates; RFC 8785; IEEE 754-2019.
+
+Three rows added for draft RFC 0003 carry an explicit partial-verification status rather than
+"Source verified": ISO 4217, ISO 24165-1:2025, and ISO 24165-2:2025 were confirmed through the
+ISO catalogue listing but could not be retrieved directly, because the ISO site returns HTTP
+403 to automated clients and the standard texts are paywalled. The ISO 20022 row was retrieved
+but its specific amount-representation rules were not confirmed in the text. Those rows are
+research leads pending human confirmation, and no requirement in RFC 0003 depends on an
+unconfirmed structural detail from any of them.
 
 ## Maintenance
 
