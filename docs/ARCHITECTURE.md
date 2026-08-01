@@ -72,6 +72,24 @@ PostgreSQL is the future reference transactional store. Posting, idempotency, pe
 
 The data model distinguishes effective time from recorded time. It must reproduce both the current corrected position and the position known at a prior filing, approval, or close. Export and tested recovery are required platform capabilities.
 
+## Signing and tamper evidence
+
+Signature, digest, signer-identity, and verification semantics are first-class public
+contracts (FD-018). Signing and verification execute in a platform service outside the
+deterministic kernel; the kernel stores and validates signatures as explicitly supplied
+input, and key custody is pluggable and never enters the kernel. Each book's accounting
+sequence forms an append-only hash chain over canonical journal digests (FD-019), so an
+authorised export permits independent, cryptographic verification that posted history has
+not been mutated, deleted, or reordered. Chain-head digests are signable.
+
+## Filing boundary
+
+The platform produces filing-ready outputs, mappings, and as-filed snapshots. It never
+registers with, authenticates to, or submits to a government gateway. Accountable
+organisations that deploy or host the platform hold their own gateway relationships,
+credentials, and compliance obligations. See the New Zealand policy and assurance
+document for the full statement.
+
 ## Extension boundary
 
 Extensions use versioned command, query, event, evidence, and agent-tool contracts. They receive only granted data and permissions. They cannot write core storage directly, run arbitrary code inside the kernel, bypass authority or invariants, replace official policy packs silently, or couple consumers to internal tables.

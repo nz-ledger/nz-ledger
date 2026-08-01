@@ -48,6 +48,22 @@ Original evidence, financial records, policy sources, interpretations, decisions
 
 Collect only information necessary for a defined purpose, classify it, isolate it by tenant and legal entity, limit access through roles and mandates, record use and disclosure, protect it against loss and misuse, and support personal-information access and correction, retention and deletion policy, export, and breach response. Overseas disclosure and processor controls are explicit. Production AI use requires a privacy impact assessment, approved model-provider allowlists, and controls that prevent provider training on customer data by default. AI processing is subject to the same authority, purpose, minimisation, and evidence requirements. Public issues, Discussions, examples, and test fixtures must not contain real private or confidential records.
 
+## Filing and accountable organisations
+
+NZ Ledger is open-source infrastructure, not a registered digital service provider. The
+project does not register with Inland Revenue or any other authority, does not access
+government gateway services, does not hold gateway credentials or certificates, and does
+not submit filings. Gateway access in New Zealand is granted to registered organisations
+that pass business, integrity, and security due diligence, including review of key office
+holders, and operate under Inland Revenue's Operational Security Framework; those
+obligations belong to the accountable organisation, never to this project.
+
+Any organisation that deploys, hosts, or builds on NZ Ledger and wants direct filing
+secures its own registrations, accreditations, credentials, and compliance obligations.
+The platform's responsibility ends at producing correct, evidence-backed, filing-ready
+outputs and as-filed snapshots through public contracts. Nothing in this repository may
+claim or imply that the project itself files, is accredited, or is approved.
+
 ## Policy and judgement registers
 
 The future accounting policy register records entity choices, scope, effective dates, approvals, source or standard basis, and supersession. The judgement register records material estimates and interpretations, evidence, uncertainty, reviewer, approval, and reassessment date. Neither register permits silent retroactive change.

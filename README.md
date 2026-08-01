@@ -10,7 +10,7 @@ NZ Ledger is an independent Apache 2.0 open-source project. Its mission is to bu
 
 NZ Ledger is intended to provide a deterministic financial and accounting foundation for complete business systems. It is New Zealand-first, evidence-backed, extensible through stable public contracts, and designed for both human and software-agent operation.
 
-The project is for developers, accounting and tax specialists, security practitioners, integration builders, and organisations that need an open financial system of record. Material capabilities may be delivered natively, by a module, or by a controlled integration. A manual journal alone does not count as support.
+The project is for developers, accounting and tax specialists, security practitioners, integration builders, and organisations that need an open financial system of record. The first delivery target is Profile 1, a single-entity New Zealand services company, documented in the capability model. The project itself never holds government gateway registrations or filing relationships; organisations building on it secure their own. Material capabilities may be delivered natively, by a module, or by a controlled integration. A manual journal alone does not count as support.
 
 ## Founding principles
 

@@ -10,6 +10,20 @@ The boundary includes sole operators, partnerships, companies, supported trusts 
 
 Delivery paths are **Native**, **Module**, or **Integration**. A capability is supported only when correct books, evidence, reconciliation, controls, close, reporting, and New Zealand obligations are preserved. A manual journal alone is insufficient.
 
+## Delivery sequencing: Profile 1
+
+The first delivery target is **Profile 1: a single-entity New Zealand services company**.
+Its intended shape is one tenant, one legal entity, functional-currency NZD, general
+ledger with exact values, evidence-backed sales invoicing and purchase records, bank
+statement import and reconciliation, GST-ready outputs, and the foundational reports
+(Trial Balance, General Ledger, Journal Register, Profit and Loss, Balance Sheet).
+
+Profile 1 is a sequencing decision, not a boundary change. The charter's capability-based
+market boundary is unchanged and, as the charter states, is not defined by any one
+founder's business; Profile 1 simply orders which capabilities are designed, implemented,
+and validated first so that a complete, conformant vertical slice exists before breadth.
+Capability rows outside Profile 1 remain governed by their own evidence requirements.
+
 ## Status vocabulary
 
 Each capability uses exactly one of: `Not assessed`, `Research required`, `Design required`, `Native planned`, `Module planned`, `Integration planned`, `Implemented`, `Validated`, or `Unsupported`.
@@ -47,6 +61,7 @@ At founding, all capabilities remain `Not assessed` or `Research required`. Plan
 | Close and assurance | Evidence and audit traceability | Not assessed | To assess | Evidence-to-output model and retention design |
 | Close and assurance | Reconciliation and exception management | Not assessed | To assess | Control definitions and close lifecycle |
 | Close and assurance | Filing and approval snapshots | Not assessed | To assess | Bitemporal and historical-reproduction design |
+| Statutory boundary | Government gateway filing (submission) | Unsupported | Integration | Permanently out of project scope: accountable organisations deploying the platform hold their own gateway registrations, credentials, and filing relationships. The platform produces filing-ready outputs and snapshots only. |
 | Security and authority | Agent and user authority | Not assessed | To assess | Principal, mandate, approval, and revocation model |
 | Security and authority | Tenant and legal-entity isolation | Not assessed | To assess | Threat model, enforcement points, and tests |
 | Extensibility | Extension and integration support | Not assessed | To assess | Manifest, permissions, isolation, and conformance design |
