@@ -12,7 +12,7 @@ NZ Ledger will define observable, language-neutral behaviour so independent impl
 ## Test layers
 
 - **Schema tests:** valid, invalid, boundary, and forward-compatibility documents.
-- **Canonical serialisation tests:** byte-identical results and stable hashes.
+- **Canonical serialisation tests:** byte-identical results and stable hashes. Draft RFC 0004 proposes the canonical profile, value encodings, schema conventions, strict validation, and compatibility rules these vectors test, and defines the vector file format.
 - **Exact-value tests:** decimal-string grammar acceptance and rejection, per-class bounds at and beyond each limit, sign and zero handling, numeric versus canonical-form equality, order-independent aggregation, and every named rounding mode at, above, and below an exact half.
 - **Valuation tests:** both quotation directions, inverted direction labels, incomplete provenance records, rate bounds, and re-performance of a supplied functional amount from its quantity, rate, target scale, and mode.
 - **Allocation tests:** residual distribution and tie-breaking, negative totals, zero weights, weights that do not sum to one, nominated residual targets, and the exact-sum post-condition.

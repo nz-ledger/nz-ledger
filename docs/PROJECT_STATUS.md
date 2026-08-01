@@ -32,6 +32,13 @@ work all depend on it.
 It is a draft. It has had no accounting-domain review, no security review, and no maintainer
 review, and it must not be cited as settled design.
 
+Draft RFC 0004, canonical serialisation, schemas, and compatibility, is also in the repository
+and awaiting a decision. It covers the first half of issue #6: canonical bytes, value
+encodings, JSON Schema conventions, strict validation, identifier syntax, and the compatibility
+policy. Digests, signing, and the FD-019 hash chain are deliberately left to RFC 0005, which
+builds on it. RFC 0004 depends on draft RFC 0003, and records that a material change there
+changes its value encodings.
+
 ## Decided and proposed
 
 | Record | Status | Where |
@@ -41,6 +48,7 @@ review, and it must not be cited as settled design.
 | ADR 0001, TypeScript reference implementation | Accepted | [`adr/0001`](adr/0001-typescript-reference-implementation.md) |
 | RFC 0002, auditability and assurance | Draft, not accepted | [`rfc/0002`](rfc/0002-auditability-and-assurance.md) |
 | RFC 0003, exact values, instruments, and valuations | Draft, not accepted | [`rfc/0003`](rfc/0003-exact-values-instruments-valuations.md) |
+| RFC 0004, canonical serialisation, schemas, and compatibility | Draft, not accepted | [`rfc/0004`](rfc/0004-canonical-serialisation-and-schemas.md) |
 
 The [RFC index](rfc/README.md) is authoritative for RFC status. A draft carries no weight in
 dependent design beyond being a proposal that dependent work may build against, provided it
@@ -81,11 +89,11 @@ the single thread for it.
 1. Recruit an independent New Zealand accounting or tax domain reviewer for RFC 0001. Human
    work, and the binding constraint on everything downstream.
 2. Decide whether RFC 0003 is accepted.
-3. Issue #6, canonical serialisation and language-neutral schemas. RFC 0003 unblocks it in
-   draft form, and it also carries the FD-019 tamper-evident hash-chain specification.
+3. RFC 0005, digests, FD-018 signing, and the FD-019 tamper-evident book hash chain, building
+   directly on draft RFC 0004. This completes the second half of issue #6.
 4. Refine draft RFC 0002 and complete the open SAF-T research.
 5. Issue #8, command, query, event, and evidence contracts, which registers the failure names
-   RFC 0003 proposes, then issue #9, golden vectors and the conformance approach.
+   RFC 0003 and RFC 0004 propose, then issue #9, golden vectors and the conformance approach.
 
 The [Phase 1 milestone](https://github.com/nz-ledger/nz-ledger/milestone/2) and the issue
 backlog remain authoritative for scope and priority.
