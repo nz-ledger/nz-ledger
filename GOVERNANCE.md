@@ -59,7 +59,9 @@ organisation. The backup owner holds organisation owner rights with secure two-f
 authentication and documented credential recovery, so that repository administration,
 security response, and release control survive the loss or unavailability of any single
 person. The appointment of the backup owner, and any change to it, is recorded publicly.
-If the founding maintainer becomes unavailable, the backup owner assumes interim
+The appointed backup owner is Meg Smith ([`@megsmithnz`](https://github.com/megsmithnz)),
+appointed 1 August 2026, holding organisation owner rights with two-factor authentication
+enabled. If the founding maintainer becomes unavailable, the backup owner assumes interim
 stewardship under this governance document until maintainers are appointed.
 
 ## Evolution
