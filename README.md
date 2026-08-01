@@ -39,6 +39,8 @@ See the [project charter](docs/PROJECT_CHARTER.md), [architecture](docs/ARCHITEC
 
 This repository currently contains documentation, governance, security configuration, community templates, and a design backlog only. It contains no application, API, SDK, CLI, MCP server, database, package, deployment, or hosted service.
 
+[Project status](docs/PROJECT_STATUS.md) records where the work currently stands: what is in flight, what is decided as against proposed, what is blocking progress, and what happens next.
+
 ## Contributing
 
 Start with [CONTRIBUTING.md](CONTRIBUTING.md), then open or join an issue or Discussion before undertaking substantial work. Public content must use neutral capability language and must not compare NZ Ledger with named accounting products or vendors.

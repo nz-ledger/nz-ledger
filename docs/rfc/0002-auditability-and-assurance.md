@@ -4,7 +4,7 @@
 - **Author:** `@nz365guy` (drafted with AI assistance, Claude, August 2026)
 - **Reviewers:** None yet. Requires independent human accounting-domain and security review before acceptance.
 - **Created:** 2026-08-01
-- **Related issues:** To be opened; depends on issues #5, #6, #8, #12 and founding decisions FD-018 and FD-019.
+- **Related issues:** To be opened; depends on issues #5 (draft RFC 0003), #6, #8, #12 and founding decisions FD-018 and FD-019.
 
 ## Problem and outcome
 

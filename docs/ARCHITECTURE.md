@@ -50,6 +50,8 @@ A posted journal is immutable and remains posted. Corrections use separate linke
 
 Money, rates, quantities, tax amounts, allocations, and balances never use JavaScript floating point. The reference exact-value primitive will use a coefficient and scale with a `bigint`-safe representation, or an equivalently exact design. Public contracts serialise values as decimal strings.
 
+Draft RFC 0003 proposes the detail this section summarises: the value model and its bounds, the decimal-string grammar, comparison and aggregation rules, named rounding modes, instrument identity and effective-dated metadata, valuation provenance, and allocation residual ownership. It is a draft and is not accepted, so nothing in it is settled design.
+
 The model distinguishes functional, transaction, settlement, and presentation currencies or instruments; instrument quantity; functional valuation; rate, source, timestamp, and purpose; rounding; and realised or unrealised movement. Journals balance in the legal entity's functional currency while retaining other quantities and valuations.
 
 Stable-value digital instruments remain financial instruments. Their metadata includes issuer, jurisdiction, reference asset, redemption, network, identifier, precision, custody, valuation sources, classifications, regulatory status, and risk status. The initial platform may record and reconcile them but does not hold private keys, provide custody, execute payments, or operate an exchange.
