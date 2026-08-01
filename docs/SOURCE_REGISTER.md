@@ -10,6 +10,7 @@ This maintainable research index records primary official sources and the projec
 | --- | --- | --- | --- |
 | New Zealand Legislation, [Companies Act 1993: company records](https://www.legislation.govt.nz/act/public/1993/105/en/latest/#DLM320862) | Company record boundary and source retention research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
 | New Zealand Legislation, [Companies Act 1993: accounting records must be kept](https://www.legislation.govt.nz/act/public/1993/105/en/latest/#DLM320899) | Accounting-record integrity and retention research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+| New Zealand Legislation, [Tax Administration Act 1994: section 22, keeping of business and other records](https://www.legislation.govt.nz/act/public/1994/0166/latest/DLM350462.html) | Retention-period research for records, evidence, and export design | Accessed: 1 August 2026; reprint current as at 18 December 2025; review owner: `@nz365guy`; review status: Source verified | Section 22 sets a 7-year retention period, extendable by Commissioner notice for up to 3 further years under audit or investigation. Confirm applicability per record class and any later amendment before a retention implementation. |
 | Inland Revenue, [Record keeping](https://www.ird.govt.nz/managing-my-tax/record-keeping) | General New Zealand tax record requirements | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
 | Inland Revenue, [Financial reporting requirements for companies](https://www.ird.govt.nz/managing-my-tax/record-keeping/financial-reporting-for-companies/financial-reporting-requirements-for-companies) | Company financial-reporting boundary | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
 | Inland Revenue, [Standards for minimum financial reporting](https://www.ird.govt.nz/managing-my-tax/record-keeping/financial-reporting-for-companies/standards-for-minimum-financial-reporting) | Minimum reporting research and policy-pack sources | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
@@ -63,6 +64,13 @@ This maintainable research index records primary official sources and the projec
 | Department of Internal Affairs, [AML/CFT legislation](https://www.dia.govt.nz/AML-CFT-Legislation) | Regulated capability boundary | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
 | Financial Markets Authority, [Designations](https://www.fma.govt.nz/business/legislation/secondary-legislation/designations/) | Financial-market classification research | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
 
+## Technical and audit standards
+
+| Authority and source | Project relevance | Source metadata | Open interpretation questions |
+| --- | --- | --- | --- |
+| IETF, [RFC 8785: JSON Canonicalization Scheme](https://www.rfc-editor.org/info/rfc8785/) | Baseline for canonical serialisation in conformance design | Accessed: 1 August 2026; published: June 2020; review owner: `@nz365guy`; review status: Source verified | JCS canonicalises IEEE 754 numbers, which the project avoids by serialising financial values as decimal strings; confirm string-value handling and any profile restrictions when the canonical-serialisation design issue is worked. |
+| OECD, Standard Audit File for Tax (SAF-T) guidance | Research input for assertion-aligned, audit-consumable export design (draft RFC 0002) | Accessed: not yet; review owner: `@nz365guy`; review status: Unreviewed | New Zealand does not mandate SAF-T. Determine whether structural alignment benefits export consumers, which SAF-T version to reference, and applicability boundaries, before any mapping is implemented. |
+
 ## Repository and package supply chain
 
 | Authority and source | Project relevance | Source metadata | Open interpretation questions |
@@ -75,6 +83,16 @@ This maintainable research index records primary official sources and the projec
 | GitHub Docs, [Workflow execution protections](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/actions-policies/workflow-execution-protections) | Fork workflow approval and execution policy | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
 | GitHub Docs, [Artifact attestations](https://docs.github.com/en/actions/concepts/security/artifact-attestations) | Future release provenance | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
 | npm Docs, [Trusted publishing](https://docs.npmjs.com/trusted-publishers/) | Future OIDC publication without a long-lived token | Accessed: 31 July 2026; effective date: not assessed; published update date: not assessed; review owner: `@nz365guy`; review status: Source verified | Determine applicability, the effective source version, and any project interpretation before use. |
+
+## Register status
+
+As at 1 August 2026, most rows record "effective date: not assessed" with a standard open
+question. That is placeholder metadata from repository bootstrap, not completed research.
+Each row is upgraded to genuine effective-date, publication-date, and interpretation
+detail when the policy or design work that depends on it begins, and no policy proposal
+may rely on a row that still carries placeholder metadata. Rows updated with completed
+research so far: Tax Administration Act 1994 section 22; the XRB rows carrying explicit
+effective and update dates; RFC 8785.
 
 ## Maintenance
 

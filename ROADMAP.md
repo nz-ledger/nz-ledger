@@ -12,11 +12,14 @@ The roadmap is outcome-based and has no promised dates. The community may work o
 
 ## Phase 1: Foundational contracts and conformance
 
+Critical path: the exact-value contract blocks nearly every later phase and is worked first.
+
 - Define the canonical domain model and invariants.
 - Define exact values, currencies, and instruments.
 - Define commands, queries, events, and evidence.
 - Define canonical serialisation and language-neutral schemas.
 - Design golden vectors and the black-box conformance approach.
+- Define signature, digest, signer-identity, and verification contracts (FD-018) and the tamper-evident book hash chain (FD-019) alongside canonical serialisation.
 
 ## Phase 2: Deterministic accounting kernel
 
@@ -35,7 +38,8 @@ The roadmap is outcome-based and has no promised dates. The community may work o
 ## Phase 4: New Zealand policy and reporting
 
 - Implement the effective-dated policy-pack framework.
-- Add reviewed GST, reporting, tax-reconciliation, fixed-asset, and filing mappings.
+- Add reviewed GST, reporting, tax-reconciliation, and fixed-asset policy packs.
+- Produce filing-ready outputs, snapshots, and mappings. The project itself never registers with, files to, or holds credentials for any government gateway; accountable organisations deploying or hosting the platform secure and operate their own filing relationships.
 - Maintain primary-source links and reviewed golden examples.
 
 ## Phase 5: Human and agent controls
@@ -57,6 +61,8 @@ The roadmap is outcome-based and has no promised dates. The community may work o
 - Add digital-instrument recording, wallet and custodian reconciliation, stable-value instrument accounting, restricted payment orchestration, and treasury controls within reviewed legal and security boundaries.
 
 ## Phase 9: Production readiness
+
+- Deliver auditor-facing assurance capabilities: chain verification, re-performance from export, and auditor principal mandates (RFC 0002 when accepted).
 
 - Complete independent domain and security review.
 - Verify recovery and migration.
