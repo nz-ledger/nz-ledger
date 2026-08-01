@@ -1,6 +1,6 @@
 # Project status
 
-**Last updated:** 2 August 2026
+**Last updated:** 1 August 2026 (Pacific/Auckland)
 
 This page answers one question: where is NZ Ledger right now. It is a current record, not a
 historical snapshot, and it is updated when work lands. Where another document is
@@ -21,12 +21,13 @@ hosted service exists, and none will until the gates below are passed.
 
 ## In flight
 
-Draft RFC 0003, the exact-value contract, is open for review. It defines what a financial
-value is: exact coefficient and scale serialised as decimal strings, bounds per semantic value
-class, comparison and aggregation rules, named rounding modes with no default, typed
-instrument identity, valuation provenance, and allocation residual ownership. It is the Phase 1
-critical-path item, because canonical serialisation, contract envelopes, conformance vectors,
-multicurrency, and digital-instrument work all depend on it.
+Draft RFC 0003, the exact-value contract, is in the repository and awaiting a decision on
+acceptance. It defines what a financial value is: exact coefficient and scale serialised as
+decimal strings, bounds per semantic value class, comparison and aggregation rules, named
+rounding modes with no default, typed instrument identity, valuation provenance, and
+allocation residual ownership. It is the Phase 1 critical-path item, because canonical
+serialisation, contract envelopes, conformance vectors, multicurrency, and digital-instrument
+work all depend on it.
 
 It is a draft. It has had no accounting-domain review, no security review, and no maintainer
 review, and it must not be cited as settled design.
