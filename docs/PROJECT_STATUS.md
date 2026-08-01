@@ -63,6 +63,10 @@ contract to that list.
 
 Recruiting a suitably qualified independent reviewer is therefore the highest-value
 contribution anyone can make to this project at present, ahead of any design or code work.
+The request is set out in full in [`REVIEWER_REQUEST.md`](REVIEWER_REQUEST.md), including what
+is asked, what is out of scope, the time involved, and what the review explicitly is not.
+Volunteers comment on [issue #36](https://github.com/nz-ledger/nz-ledger/issues/36), which is
+the single thread for it.
 
 ## Open maintainer decisions
 
