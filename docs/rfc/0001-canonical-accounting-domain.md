@@ -2,7 +2,8 @@
 
 - **Status:** Accepted
 - **Author:** `@nz365guy`
-- **Reviewers:** `@nz365guy` (sole-maintainer domain and decision review), Codex Security (security review); independent accounting-domain review deferred under the bootstrap exception below
+- **Drafting:** produced with AI coding agents (Claude Code), directed and reviewed by `@nz365guy`
+- **Reviewers:** `@nz365guy` (maintainer review; also the directing author, so not independent), AI security review (Codex), AI documentation review (Claude, August 2026). No independent human accounting-domain review has occurred. That review is deferred review debt under the bootstrap exception in `GOVERNANCE.md` and is tracked as the highest-priority `independent-review-required` issue. This RFC must be re-reviewed by an independent human domain reviewer before any Phase 2 implementation work is accepted
 - **Created:** 2026-07-31
 - **Related issues:** #3
 

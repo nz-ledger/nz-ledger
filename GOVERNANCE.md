@@ -34,6 +34,34 @@ Maintainer candidates demonstrate sustained, accurate, respectful contributions;
 
 Conflicts of interest are disclosed. A conflicted maintainer does not act as the sole reviewer or decision-maker. Disputes seek evidence, project principles, and a written decision. Conduct concerns use the private process in `CODE_OF_CONDUCT.md`.
 
+## Bootstrap review exception and review debt
+
+The founding phase operates under a recorded bootstrap exception: some reviews that this
+governance normally requires were deferred because the project began with one maintainer.
+Deferred reviews are debt, not waivers. Each deferred review is tracked in a public issue
+labelled `independent-review-required`, in priority order.
+
+Current deferred reviews, highest priority first:
+
+1. Independent accounting-domain review of RFC 0001 (canonical accounting domain).
+2. Independent review of the exact-value contract when accepted (issue #5).
+3. Independent review of canonical serialisation and schemas when accepted (issue #6).
+
+Expiry trigger: the bootstrap exception ends before Phase 2 implementation work is accepted.
+No kernel implementation issue may be accepted, and no release gate may pass, until RFC 0001
+has received independent human accounting-domain review by a reviewer who is not the author.
+AI-assisted review may inform, but does not satisfy, an independent human review requirement.
+
+## Succession and ownership continuity
+
+Founding decision FD-002 requires a trusted backup owner for the `nz-ledger` GitHub
+organisation. The backup owner holds organisation owner rights with secure two-factor
+authentication and documented credential recovery, so that repository administration,
+security response, and release control survive the loss or unavailability of any single
+person. The appointment of the backup owner, and any change to it, is recorded publicly.
+If the founding maintainer becomes unavailable, the backup owner assumes interim
+stewardship under this governance document until maintainers are appointed.
+
 ## Evolution
 
 Governance may evolve through an accepted RFC when contributor scale, risk, or stewardship requires it. At bootstrap there is no foundation, board, token, decentralised autonomous organisation, or formal voting system.
