@@ -35,6 +35,8 @@ Principal to experience; experience to command gateway; agent to tool; external 
 
 Controls include exact primitives, canonical contracts, idempotency, atomic posting, immutable history, explicit corrections, source-linked valuations, separation of duties, reconciliation, bitemporal snapshots, and conformance vectors.
 
+Draft RFC 0003 proposes specific controls for the exact-value, rounding, residual, rate-source, and instrument-identity threats above, including strict parsing with no recovery, bounded value classes, zero balance tolerance, explicit quotation direction, and a named failure and required vector for each path that could conceal value. Those controls are proposed, not accepted, and this threat model does not yet treat them as mitigations in place.
+
 ## 8. Agent threats
 
 Prompt injection, fabricated evidence, excessive mandate, confused delegation, tool misuse, approval spoofing, repeated commands, hidden uncertainty, unsafe external action, sensitive-data disclosure, and retention of private reasoning. Controls include untrusted-input handling, explicit mandates and limits, evidence binding, idempotency, risk approvals, unknown states, tool isolation, outcome reconciliation, revocation, and concise decision records without chain-of-thought.

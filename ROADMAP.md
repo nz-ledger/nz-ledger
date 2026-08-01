@@ -15,7 +15,7 @@ The roadmap is outcome-based and has no promised dates. The community may work o
 Critical path: the exact-value contract blocks nearly every later phase and is worked first.
 
 - Define the canonical domain model and invariants.
-- Define exact values, currencies, and instruments.
+- Define exact values, currencies, and instruments (draft RFC 0003).
 - Define commands, queries, events, and evidence.
 - Define canonical serialisation and language-neutral schemas.
 - Design golden vectors and the black-box conformance approach.
