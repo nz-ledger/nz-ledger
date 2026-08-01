@@ -5,7 +5,7 @@ NZ Ledger will define observable, language-neutral behaviour so independent impl
 ## Contract formats
 
 - JSON Schemas define versioned command, query, event, evidence, error, and report payloads.
-- Canonical serialisation defines Unicode handling, object-key ordering, arrays, absent versus null values, identifiers, dates, timestamps, exact decimals, hashes, and signatures.
+- Canonical serialisation adopts RFC 8785 (JSON Canonicalization Scheme) as its baseline, defining Unicode handling, object-key ordering, arrays, absent versus null values, identifiers, dates, timestamps, exact decimals, hashes, and signatures. RFC 8785's known weakness, IEEE 754 number canonicalisation, does not apply because public financial values are decimal strings, never JSON numbers. The baseline is a default subject to confirmation when the canonical-serialisation design issue is worked; any departure requires recorded evidence.
 - Financial values are decimal strings with explicit precision and scale rules, never floating-point JSON numbers.
 - Compatibility rules define additive, deprecating, and breaking changes.
 
