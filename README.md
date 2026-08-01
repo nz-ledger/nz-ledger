@@ -45,6 +45,8 @@ This repository currently contains documentation, governance, security configura
 
 Start with [CONTRIBUTING.md](CONTRIBUTING.md), then open or join an issue or Discussion before undertaking substantial work. Public content must use neutral capability language and must not compare NZ Ledger with named accounting products or vendors.
 
+**The project is currently seeking an independent New Zealand accounting or tax domain reviewer.** This is the single thing blocking further design and implementation work, and it does not require software knowledge. The request, including what it explicitly is not, is set out in [docs/REVIEWER_REQUEST.md](docs/REVIEWER_REQUEST.md).
+
 Report security concerns through GitHub private vulnerability reporting as described in [SECURITY.md](SECURITY.md). Do not place secrets, personal data, or confidential financial information in a public issue or Discussion.
 
 ## Licence and stewardship
