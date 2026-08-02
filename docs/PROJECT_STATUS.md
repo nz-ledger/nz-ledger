@@ -1,6 +1,6 @@
 # Project status
 
-**Last updated:** 1 August 2026 (Pacific/Auckland)
+**Last updated:** 3 August 2026 (Pacific/Auckland)
 
 This page answers one question: where is NZ Ledger right now. It is a current record, not a
 historical snapshot, and it is updated when work lands. Where another document is
@@ -91,7 +91,10 @@ the single thread for it.
 2. Decide whether RFC 0003 is accepted.
 3. RFC 0005, digests, FD-018 signing, and the FD-019 tamper-evident book hash chain, building
    directly on draft RFC 0004. This completes the second half of issue #6.
-4. Refine draft RFC 0002 and complete the open SAF-T research.
+4. Refine draft RFC 0002. The SAF-T research it depended on is complete and recorded in the
+   source register and in the RFC: SAF-T alignment is proposed as an optional derived export
+   profile at module level only, never the canonical export. One research lead remains open in
+   the register: verifying the New Zealand eInvoicing timeline against MBIE primary sources.
 5. Issue #8, command, query, event, and evidence contracts, which registers the failure names
    RFC 0003 and RFC 0004 propose, then issue #9, golden vectors and the conformance approach.
 

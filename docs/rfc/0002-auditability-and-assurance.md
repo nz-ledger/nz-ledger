@@ -54,11 +54,31 @@ the event outbox under the same controls. No auditor mandate confers command aut
 
 Export and workpaper contracts document their mapping to standard audit assertions
 (existence, completeness, accuracy, cut-off, classification, valuation, rights and
-obligations, presentation). Alignment with the OECD Standard Audit File for Tax
-(SAF-T) structure is a research task: New Zealand does not mandate SAF-T, but
-structural alignment would make exports consumable by existing audit tooling and
-future AI audit agents. Research findings will be recorded in the source register
-before any mapping is implemented.
+obligations, presentation).
+
+SAF-T research findings (researched August 2026, recorded in the source register):
+the structural reference is the OECD Forum on Tax Administration guidance note
+Guidance for the Standard Audit File, Tax, Version 2.0 (April 2010), whose content
+areas (general ledger journals, receivables and payables master data with invoices
+and payments, fixed assets, and inventory) map naturally onto this project's
+subledger model. Version 1.0 (May 2005) is superseded, and a companion payroll
+standard (SAF-P) exists. The OECD guidance is legacy: it is published only through
+the OECD web archive and the standard now evolves solely through national
+implementations. New Zealand does not mandate SAF-T and appears in no national
+adoption list; the observable New Zealand direction for structured tax data is
+gateway digital services and Peppol e-invoicing, not audit-file submission.
+
+The design consequence is a boundary, proposed as follows. SAF-T alignment, if
+built, is a derived, one-way export profile in a module, never the canonical
+export, which remains this project's canonical serialisation. Three SAF-T design
+assumptions conflict with kernel canon and must stay at that module boundary: XML
+schema numeric types versus exact decimal-string values, the assumption that
+master data is constant for the period of a file versus effective-dated data, and
+the convention of populating unavailable mandatory elements with placeholder
+values versus this project's refusal to fabricate data. Assertion alignment of
+exports therefore does not depend on SAF-T; SAF-T becomes one optional consumer
+mapping among others, justified only if adopting organisations or audit tooling
+demand it.
 
 ## Alternatives
 
@@ -82,8 +102,9 @@ export-completeness round-trip tests.
 ## Open questions
 
 Chain granularity (per book confirmed; whether ledgers also carry a summary chain);
-digest algorithm agility; anchoring module boundary; SAF-T applicability findings for
-New Zealand entities.
+digest algorithm agility; anchoring module boundary; whether a derived SAF-T export
+profile module is ever justified for New Zealand entities, given no domestic mandate
+exists, and if so at which phase.
 
 ## Decision
 
