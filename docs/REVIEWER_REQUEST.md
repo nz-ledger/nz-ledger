@@ -63,11 +63,11 @@ are set out in [RFC 0003](rfc/0003-exact-values-instruments-valuations.md).
   the kernel and are deliberately not in RFC 0001.
 - Correcting the writing. Substance is what is wanted.
 
-## Time commitment
+## Pace
 
-RFC 0001 is a single document of roughly 700 lines. For most reviewers a careful read plus
-written findings is around half a day. That is an estimate offered honestly rather than a
-target, and a slower, more sceptical read is more valuable than a fast one.
+RFC 0001 is a single, bounded document. Take whatever time the review needs: a slower, more
+sceptical read is more valuable than a fast one, and no estimate is offered because only the
+reviewer can judge it.
 
 There is no deadline. This project runs at a hobby pace and will wait.
 
