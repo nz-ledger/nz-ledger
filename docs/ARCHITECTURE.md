@@ -32,11 +32,17 @@ Human experiences       Agent experiences       External systems
 
 Humans, agents, integrations, and scheduled rules are principals. They submit commands through the same gateway. Identity, delegator, mandate, permissions, monetary and counterparty limits, instrument limits, time limits, evidence requirements, approvals, and expiry are evaluated before a command reaches a financial boundary. Model confidence is never authority.
 
+API, CLI, and MCP access are peer adapters over this gateway (FD-021). An adapter carries no business logic, evaluates no authority, and holds no financial state. Every surface expresses only what the public command and query contracts express, and each reference adapter is conformance-tested against the same golden vectors as the gateway.
+
+Delegation forms an auditable chain. A delegated mandate may only narrow the delegator's authority, never broaden it, and revocation cascades through the chain. Agent contracts are defined protocol-neutrally; the Model Context Protocol is one binding, and future agent protocols may bind to the same contracts.
+
 ## Evidence and business events
 
 Original input is recorded before financial compilation. Sources may include invoices, receipts, bank transactions, payments, payroll results, contracts, approvals, custodian records, external events, and declarations. Records retain source system and identifier, legal entity, counterparty, received time, effective dates, tax point, settlement date, original payload or document, cryptographic hash, extraction version, classification history, correlation identifier, and idempotency key.
 
 AI extraction is derived data and never replaces original evidence.
+
+Evidence content is data, never instruction. Text inside evidence, including text read by an AI model during extraction or review, is never interpreted as a command and never grants authority.
 
 ## Deterministic accounting kernel
 
