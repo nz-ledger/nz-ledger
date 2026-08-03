@@ -19,6 +19,7 @@ Critical path: the exact-value contract blocks nearly every later phase and is w
 - Define commands, queries, events, and evidence.
 - Define canonical serialisation and language-neutral schemas.
 - Design golden vectors and the black-box conformance approach.
+- Define the canonical error contract and the asynchronous operation contract shared by every access surface.
 - Define signature, digest, signer-identity, and verification contracts (FD-018) and the tamper-evident book hash chain (FD-019) alongside canonical serialisation.
 
 ## Phase 2: Deterministic accounting kernel
@@ -44,13 +45,14 @@ Critical path: the exact-value contract blocks nearly every later phase and is w
 
 ## Phase 5: Human and agent controls
 
-- Implement principals, delegations, mandates, approvals, and revocation.
+- Implement principals, delegation chains with attenuation-only sub-delegation, mandates, approvals, separation-of-duties constraints, and cascading revocation.
 - Implement exception handling, close controls, decision records, and audit.
 
 ## Phase 6: Extension platform
 
 - Define SDK contracts, manifests, permissions, webhooks, and sandboxing.
 - Publish extension conformance requirements and a reviewed reference connector.
+- Deliver the reference access surfaces: HTTP API, CLI, and MCP server as conformance-tested peer adapters over the command gateway (FD-021).
 
 ## Phase 7: Common business modules and close
 
